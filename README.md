@@ -1,0 +1,1 @@
+# Guia-Paradise-32-v2
