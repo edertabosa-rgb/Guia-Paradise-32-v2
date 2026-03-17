@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Boas-Vindas | Golf Ville 32 Mar Apto 32</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ocean:     #21569a;
+            --ocean-deep:#172d5c;
+            --sky:       #4488b9;
+            --sand:      #ffd895;
+            --sand-light:#fff0b8;
+            --coral:     #e97d16;
+            --white:     #ffffff;
+            --text:      #172d5c;
+            --text-soft: #4a6080;
+            --shadow:    0 6px 30px rgba(23,45,92,0.13);
+            --radius:    18px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(160deg, var(--ocean-deep) 0%, var(--sky) 100%);
+            min-height: 100vh;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #f7f4ee;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            background:
+                linear-gradient(to bottom, rgba(23,45,92,0.25) 0%, rgba(23,45,92,0.55) 100%),
+                url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/402556596.jpg?k=0065a29872b363823845a600f52737e0ac9f476f3dfae43d72d5164cd0569d1c&o=') center/cover no-repeat;
+            height: 310px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 24px 0 24px;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-wave {
+            position: absolute;
+            bottom: -2px;
+            left: 0; right: 0;
+            z-index: 2;
+            line-height: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding-bottom: 52px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--coral);
+            color: var(--white);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6em;
+            font-weight: 700;
+            line-height: 1.1;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+            margin-bottom: 6px;
+        }
+
+        .hero p {
+            font-size: 0.95em;
+            font-weight: 400;
+            opacity: 0.92;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-palm {
+            position: absolute;
+            top: 18px; right: 20px;
+            font-size: 3.2em;
+            opacity: 0.22;
+            z-index: 1;
+            transform: rotate(-10deg);
+        }
+
+        .wave-divider {
+            background: #f7f4ee;
+            margin-top: -1px;
+        }
+
+        /* ─── NAV MENU ─── */
+        .nav-section-title {
+            text-align: center;
+            padding: 22px 20px 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1em;
+            color: var(--ocean);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 16px 18px 24px;
+            background: transparent;
+        }
+
+        .nav-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 18px 8px 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.28s cubic-bezier(.4,0,.2,1);
+            box-shadow: 0 3px 14px rgba(23,45,92,0.09);
+            border: 2px solid transparent;
+            text-decoration: none;
+            color: var(--text);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--ocean), var(--sky));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        .nav-item:hover::before,
+        .nav-item:active::before {
+            transform: scaleX(1);
+        }
+
+        .nav-item:hover, .nav-item:active {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(33,86,154,0.18);
+            border-color: var(--sky);
+        }
+
+        .nav-item i {
+            font-size: 1.7em;
+            margin-bottom: 7px;
+            display: block;
+            color: var(--ocean);
+            transition: color 0.2s;
+        }
+
+        .nav-item:hover i { color: var(--coral); }
+
+        .nav-item span {
+            font-size: 0.75em;
+            font-weight: 600;
+            display: block;
+            line-height: 1.2;
+            color: var(--text-soft);
+        }
+
+        /* ─── SECTIONS ─── */
+        .section {
+            display: none;
+            padding: 22px 18px 30px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity:0; transform:translateY(18px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 22px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--sand);
+        }
+
+        .section-header i {
+            font-size: 2.2em;
+            color: var(--ocean);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ocean-deep);
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        /* ─── CARDS ─── */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 18px 18px 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 12px rgba(23,45,92,0.07);
+            border-left: 4px solid var(--ocean);
+        }
+
+        .card h3 {
+            color: var(--ocean);
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p, .card li {
+            font-size: 0.93em;
+            line-height: 1.65;
+            color: var(--text-soft);
+        }
+
+        .card ul { list-style:none; padding-left:0; }
+
+        .card li {
+            padding: 5px 0 5px 20px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--coral);
+            font-size: 0.7em;
+            top: 7px;
+        }
+
+        /* ─── ADDRESS BOX ─── */
+        .address-box {
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 100%);
+            color: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .address-box::after {
+            content: '🌴';
+            position: absolute;
+            right: 16px; top: 16px;
+            font-size: 2.5em;
+            opacity: 0.18;
+        }
+
+        .address-box i { font-size: 1.8em; margin-bottom: 8px; opacity:0.9; }
+        .address-box h3 { font-size:1.15em; margin-bottom:8px; font-weight:600; }
+        .address-box p { font-size:0.93em; opacity:0.95; line-height:1.55; }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 14px;
+            background: var(--sand);
+            color: var(--ocean-deep);
+            padding: 10px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9em;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .map-btn:hover { transform:scale(1.05); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+
+        /* ─── CHECKLIST ─── */
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 11px 12px;
+            background: #f7f4ee;
+            margin-bottom: 7px;
+            border-radius: 10px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            transition: background 0.2s;
+        }
+
+        .checklist-item:hover { background: var(--sand-light); }
+
+        .checklist-item input[type="checkbox"] {
+            width: 19px; height: 19px;
+            margin-right: 11px;
+            accent-color: var(--ocean);
+            cursor: pointer;
+        }
+
+        .checklist-item label {
+            flex: 1;
+            font-size: 0.9em;
+            cursor: pointer;
+            color: var(--text-soft);
+        }
+
+        /* ─── INVENTORY GRID ─── */
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 9px;
+            margin-top: 13px;
+        }
+
+        .inventory-item {
+            background: #f7f4ee;
+            padding: 11px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.82em;
+            border: 2px solid transparent;
+            transition: all 0.25s;
+            color: var(--text-soft);
+            font-weight: 500;
+        }
+
+        .inventory-item:hover {
+            border-color: var(--sky);
+            background: var(--sand-light);
+            transform: scale(1.02);
+        }
+
+        .inventory-item i {
+            display: block;
+            font-size: 1.4em;
+            color: var(--ocean);
+            margin-bottom: 4px;
+        }
+
+        /* ─── BACK BUTTON ─── */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--ocean);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88em;
+            margin-bottom: 18px;
+            padding: 7px 14px;
+            border-radius: 20px;
+            background: rgba(33,86,154,0.09);
+            transition: all 0.25s;
+        }
+
+        .back-btn:hover { background: rgba(33,86,154,0.17); }
+
+        /* ─── AMENITY TAGS ─── */
+        .amenity-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--sky), var(--ocean));
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            margin: 3px;
+            font-weight: 500;
+        }
+
+        /* ─── EMERGENCY / HIGHLIGHT ─── */
+        .emergency {
+            background: linear-gradient(135deg, var(--coral) 0%, #c0510a 100%);
+            color: var(--white);
+            padding: 18px;
+            border-radius: var(--radius);
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        .emergency i { font-size:1.6em; margin-bottom:6px; display:block; }
+        .emergency h3 { font-size:1.1em; margin-bottom:8px; font-weight:700; }
+        .emergency p { font-size:0.9em; line-height:1.7; opacity:0.97; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--sand-light) 0%, var(--sand) 100%);
+            border: 2px solid var(--coral);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .highlight-box i { font-size:2em; color:var(--coral); margin-bottom:8px; display:block; }
+        .highlight-box h3 { color:var(--ocean-deep); font-weight:700; margin-bottom:6px; }
+        .highlight-box p { font-size:0.9em; color:var(--text-soft); line-height:1.6; }
+
+        /* ─── ENERGY CALC ─── */
+        .energy-calc {
+            background: var(--sand-light);
+            border: 2px solid var(--sand);
+            border-radius: var(--radius);
+            padding: 18px;
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        .energy-calc h4 {
+            color: var(--ocean-deep);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        .price-tag {
+            font-size: 1.3em;
+            color: var(--coral);
+            font-weight: 700;
+        }
+
+        /* ─── CONTACT BUTTONS (WhatsApp) ─── */
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #25d366;
+            color: var(--white);
+            text-decoration: none;
+            padding: 13px 18px;
+            border-radius: var(--radius);
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.93em;
+            transition: all 0.25s;
+            box-shadow: 0 3px 12px rgba(37,211,102,0.25);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+        }
+
+        .contact-btn i { font-size: 1.5em; }
+
+        .contact-btn .btn-sub {
+            font-size: 0.78em;
+            font-weight: 400;
+            opacity: 0.9;
+            display: block;
+        }
+
+        /* ─── RESTAURANT / USEFUL CONTACTS CARDS ─── */
+        .place-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 15px 16px;
+            margin-bottom: 11px;
+            box-shadow: 0 2px 10px rgba(23,45,92,0.07);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            border-left: 4px solid var(--sand);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .place-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(23,45,92,0.12);
+        }
+
+        .place-icon {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, var(--sand-light), var(--sand));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.4em;
+            color: var(--ocean);
+        }
+
+        .place-info h4 {
+            font-size: 0.95em;
+            font-weight: 700;
+            color: var(--ocean-deep);
+            margin-bottom: 3px;
+        }
+
+        .place-info p {
+            font-size: 0.8em;
+            color: var(--text-soft);
+            line-height: 1.45;
+        }
+
+        .place-info .place-dist {
+            display: inline-block;
+            background: var(--ocean);
+            color: var(--white);
+            font-size: 0.68em;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 4px;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            background: var(--ocean-deep);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '🌊🌴🌊';
+            display: block;
+            font-size: 1.6em;
+            margin-bottom: 12px;
+            letter-spacing: 6px;
+            opacity: 0.6;
+        }
+
+        .footer p { font-size:0.88em; opacity:0.88; margin-bottom:6px; }
+
+        .section-wave {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            margin-bottom: 6px;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 400px) {
+            .nav-menu { gap: 9px; padding: 14px 12px 20px; }
+            .nav-item { padding: 14px 6px 12px; }
+            .nav-item i { font-size: 1.5em; }
+            .nav-item span { font-size: 0.68em; }
+            .hero h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ─── HERO ─── -->
+    <div class="hero">
+        <span class="hero-palm">🌴</span>
+        <div class="hero-content">
+            <div class="hero-badge">🌊 Porto das Dunas · Ceará</div>
+            <h1>Bem-vindo ao<br>Golf Ville</h1>
+            <p><strong>Bloco 32 Mar · Apartamento 32</strong></p>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 480 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,30 C80,55 160,5 240,30 C320,55 400,5 480,30 L480,55 L0,55 Z" fill="#f7f4ee"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ─── MAIN NAVIGATION ─── -->
+    <div class="nav-section-title">O que você precisa saber</div>
+    <nav class="nav-menu" id="mainNav">
+        <a href="#" class="nav-item" onclick="showSection('welcome'); return false;">
+            <i class="fas fa-heart"></i>
+            <span>Boas‑Vindas</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('location'); return false;">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Localização</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('amenities'); return false;">
+            <i class="fas fa-umbrella-beach"></i>
+            <span>Lazer</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('checklist'); return false;">
+            <i class="fas fa-clipboard-check"></i>
+            <span>Check‑list</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('inventory'); return false;">
+            <i class="fas fa-box-open"></i>
+            <span>O que tem aqui</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('rules'); return false;">
+            <i class="fas fa-scroll"></i>
+            <span>Regras</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('restaurants'); return false;">
+            <i class="fas fa-utensils"></i>
+            <span>Restaurantes</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('useful'); return false;">
+            <i class="fas fa-store"></i>
+            <span>Contatos Úteis</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('contacts'); return false;">
+            <i class="fab fa-whatsapp"></i>
+            <span>Contatos</span>
+        </a>
+    </nav>
+
+    <!-- ─── BOAS VINDAS ─── -->
+    <section id="welcome" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-sun"></i>
+            <h2>Boas-Vindas</h2>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-star" style="color:var(--coral)"></i> É um prazer recebê-lo!</h3>
+            <p>Seja bem-vindo ao nosso apartamento no <strong>Golf Ville 32 Paradise</strong>! Preparamos este espaço com muito carinho para que você tenha uma estadia inesquecível no Porto das Dunas.</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-bed"></i> Acomodações</h3>
+            <ul>
+                <li>3 suítes climatizadas</li>
+                <li>2 camas de casal</li>
+                <li>3 camas de solteiro</li>
+                <li>Sofá-cama adicional</li>
+                <li>Capacidade: 7 hóspedes</li>
+                <li>3 banheiros com água quente</li>
+            </ul>
+        </div>
+        <div class="highlight-box">
+            <i class="fas fa-award"></i>
+            <h3>Preferido dos Hóspedes</h3>
+            <p>Esta acomodação é uma das mais bem avaliadas da região, reconhecida por oferecer excelência em conforto e experiência!</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-concierge-bell"></i> Anfitrião</h3>
+            <p><strong>Eder Tabosa</strong><br>
+            📱 85 9 99716870<br>
+            🕗 Horário: 8h às 22h<br>
+            <em style="font-size:0.88em; color:var(--ocean);">Estamos à disposição para tornar sua estadia perfeita!</em></p>
+        </div>
+    </section>
+
+    <!-- ─── LOCALIZAÇÃO ─── -->
+    <section id="location" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-map-marked-alt"></i>
+            <h2>Localização</h2>
+        </div>
+        <div class="address-box">
+            <i class="fas fa-home"></i>
+            <h3>Endereço Completo</h3>
+            <p>Golf Ville Residence<br>
+            Av. Oceano Índico, 255<br>
+            Bloco 32 Mar · Apto 32<br>
+            Porto das Dunas, Aquiraz – CE<br>
+            CEP: 61700-000</p>
+            <a href="https://maps.google.com/?q=Golf+Ville+Porto+das+Dunas" class="map-btn" target="_blank">
+                <i class="fas fa-location-arrow"></i> Abrir no Maps
+            </a>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-umbrella" style="color:var(--sky)"></i> Praia & Beach Park</h3>
+            <p>🌊 <strong>Acesso direto:</strong> Ao sair do portão, você já está na praia de Porto das Dunas</p>
+            <p>🎢 <strong>Beach Park:</strong> Apenas 1,5 km (3 min de carro)</p>
+            <p>🏖️ <strong>Praia:</strong> Águas tranquilas, perfeita para famílias</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-car"></i> Distâncias</h3>
+            <ul>
+                <li>Fortaleza (centro): 25 km</li>
+                <li>Aeroporto Pinto Martins: 22 km</li>
+                <li>Beach Park: 1,5 km</li>
+                <li>Centro de Aquiraz: 8 km</li>
+                <li>Parque Engenhoca: 10 km</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-parking"></i> Estacionamento</h3>
+            <p>Vaga coberta para <strong>2 carros</strong>, um atrás do outro, na frente do bloco 3232.</p>
+        </div>
+    </section>
+
+    <!-- ─── LAZER ─── -->
+    <section id="amenities" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-swimming-pool"></i>
+            <h2>Áreas de Lazer</h2>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-water" style="color:var(--sky)"></i> Piscinas & Spa</h3>
+            <span class="amenity-tag">Piscinas externas</span>
+            <span class="amenity-tag">Hidromassagem</span>
+            <span class="amenity-tag">Sauna</span>
+            <span class="amenity-tag">Spa</span>
+            <p style="margin-top:10px;">Várias piscinas espalhadas pelo condomínio com vista para o mar e áreas de descanso.</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-running"></i> Esportes</h3>
+            <span class="amenity-tag">Campo de Golf</span>
+            <span class="amenity-tag">Beach Tênis</span>
+            <span class="amenity-tag">Tênis</span>
+            <span class="amenity-tag">Vôlei</span>
+            <span class="amenity-tag">Futebol</span>
+            <span class="amenity-tag">Academia</span>
+            <span class="amenity-tag">Caiaque</span>
+            <p style="margin-top:10px;">Estrutura completa para prática esportiva com equipamentos disponíveis.</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-child"></i> Infantil</h3>
+            <span class="amenity-tag">Parquinhos</span>
+            <span class="amenity-tag">Brinquedoteca</span>
+            <span class="amenity-tag">Biblioteca infantil</span>
+            <span class="amenity-tag">Sala de cinema</span>
+            <span class="amenity-tag">Salão de jogos</span>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-utensils"></i> Gastronomia</h3>
+            <span class="amenity-tag">2 Restaurantes</span>
+            <span class="amenity-tag">Bar/Lounge</span>
+            <span class="amenity-tag">Pool bar</span>
+            <span class="amenity-tag">Churrasqueira no apto</span>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-spa"></i> Bem-estar</h3>
+            <span class="amenity-tag">Salão de beleza</span>
+            <span class="amenity-tag">Spa</span>
+            <span class="amenity-tag">Sauna</span>
+        </div>
+    </section>
+
+    <!-- ─── CHECKLIST ─── -->
+    <section id="checklist" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-tasks"></i>
+            <h2>Check-list</h2>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-broom" style="color:var(--coral)"></i> Check-out · Limpeza</h3>
+            <div class="checklist-item"><input type="checkbox" id="lixos"><label for="lixos">Retirar todos os lixos</label></div>
+            <div class="checklist-item"><input type="checkbox" id="loucas"><label for="loucas">Louças lavadas e guardadas</label></div>
+            <div class="checklist-item"><input type="checkbox" id="geladeira"><label for="geladeira">Geladeira limpa (sem restos de comida)</label></div>
+            <div class="checklist-item"><input type="checkbox" id="churrasqueira"><label for="churrasqueira">Churrasqueira limpa</label></div>
+            <div class="checklist-item"><input type="checkbox" id="moveis"><label for="moveis">Móveis no lugar original</label></div>
+            <div class="checklist-item"><input type="checkbox" id="janelas"><label for="janelas">Janelas e portas fechadas</label></div>
+            <div class="checklist-item"><input type="checkbox" id="ar"><label for="ar">Ar-condicionado desligado</label></div>
+            <div class="checklist-item"><input type="checkbox" id="luzes"><label for="luzes">Luzes apagadas</label></div>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-key"></i> Entrega</h3>
+            <div class="checklist-item"><input type="checkbox" id="chaves"><label for="chaves">Chaves do apartamento</label></div>
+            <div class="checklist-item"><input type="checkbox" id="controles"><label for="controles">Controles de ar e TV</label></div>
+            <div class="checklist-item"><input type="checkbox" id="cartoes"><label for="cartoes">Cartões de acesso (se houver)</label></div>
+            <div class="checklist-item"><input type="checkbox" id="vaga"><label for="vaga">Vaga de garagem liberada</label></div>
+        </div>
+        <div class="energy-calc">
+            <h4><i class="fas fa-bolt" style="color:var(--coral)"></i> Consumo de Energia</h4>
+            <p>Medição no <strong>check-in</strong> e <strong>check-out</strong></p>
+            <p class="price-tag">R$ 1,00 por kWh consumido</p>
+            <p style="font-size:0.82em; margin-top:5px; color:var(--text-soft);">*Valor calculado no check-out e cobrado via PIX</p>
+        </div>
+    </section>
+
+    <!-- ─── INVENTÁRIO ─── -->
+    <section id="inventory" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-clipboard-list"></i>
+            <h2>O que temos por aqui</h2>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-bed"></i> Quartos (3 suítes)</h3>
+            <div class="inventory-grid">
+                <div class="inventory-item"><i class="fas fa-bed"></i>2 Camas casal</div>
+                <div class="inventory-item"><i class="fas fa-bed"></i>3 Camas solteiro</div>
+                <div class="inventory-item"><i class="fas fa-couch"></i>Sofá-cama</div>
+                <div class="inventory-item"><i class="fas fa-snowflake"></i>Ar-condicionado (3)</div>
+                <div class="inventory-item"><i class="fas fa-tshirt"></i>Guarda-roupas</div>
+                <div class="inventory-item"><i class="fas fa-shower"></i>Chuveiro quente (3)</div>
+            </div>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-utensils"></i> Cozinha Completa</h3>
+            <div class="inventory-grid">
+                <div class="inventory-item"><i class="fas fa-snowflake"></i>Geladeira</div>
+                <div class="inventory-item"><i class="fas fa-fire"></i>Fogão</div>
+                <div class="inventory-item"><i class="fas fa-tint"></i>Purificador</div>
+                <div class="inventory-item"><i class="fas fa-coffee"></i>Cafeteira</div>
+                <div class="inventory-item"><i class="fas fa-blender"></i>Liquidificador</div>
+                <div class="inventory-item"><i class="fas fa-utensils"></i>Louças completas</div>
+                <div class="inventory-item"><i class="fas fa-glass-cheers"></i>Copos/taças</div>
+                <div class="inventory-item"><i class="fas fa-fire-burner"></i>Panelas</div>
+            </div>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-tv"></i> Sala & Varanda</h3>
+            <div class="inventory-grid">
+                <div class="inventory-item"><i class="fas fa-tv"></i>Smart TV</div>
+                <div class="inventory-item"><i class="fas fa-wifi"></i>WiFi – PARADISE<br><small>Senha: 0102030405</small></div>
+                <div class="inventory-item"><i class="fas fa-chair"></i>Mesa/cadeiras</div>
+                <div class="inventory-item"><i class="fas fa-fire"></i>Churrasqueira gás</div>
+                <div class="inventory-item"><i class="fas fa-wind"></i>Ventilador</div>
+            </div>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-bath"></i> Banheiros & Serviço</h3>
+            <div class="inventory-grid">
+                <div class="inventory-item"><i class="fas fa-pump-soap"></i>Sabonete</div>
+                <div class="inventory-item"><i class="fas fa-toilet-paper"></i>Papel higiênico</div>
+                <div class="inventory-item"><i class="fas fa-bath"></i>Toalhas</div>
+                <div class="inventory-item"><i class="fas fa-bed"></i>Lençóis</div>
+                <div class="inventory-item"><i class="fas fa-soap"></i>Máquina lavar</div>
+                <div class="inventory-item"><i class="fas fa-broom"></i>Material limpeza</div>
+            </div>
+        </div>
+        <div class="highlight-box" style="border-color:var(--coral);">
+            <i class="fas fa-exclamation-triangle" style="color:var(--coral)"></i>
+            <h3>Reposição</h3>
+            <p>Itens de consumo (sabonete, papel, etc.) são de responsabilidade do hóspede após o primeiro kit de boas-vindas.</p>
+        </div>
+    </section>
+
+    <!-- ─── REGRAS ─── -->
+    <section id="rules" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-scroll"></i>
+            <h2>Regras da Casa</h2>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-volume-mute" style="color:var(--sky)"></i> Silêncio</h3>
+            <p>Respeite o horário de silêncio do condomínio: <strong>22h às 8h</strong>. Evite barulhos que possam incomodar os vizinhos.</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-ban" style="color:var(--coral)"></i> Proibido</h3>
+            <ul>
+                <li>Fumar dentro do apartamento</li>
+                <li>Festas ou eventos</li>
+                <li>Exceder capacidade (máx. 7 pessoas)</li>
+                <li>Estacionar o carro em outra vaga</li>
+                <li>Multa administrativa por descumprimento: <strong>R$ 1.500,00</strong></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-swimming-pool"></i> Áreas Comuns</h3>
+            <p>• Limite de velocidade nas vias: 20 km/h<br>
+            • Crianças menores de 12 anos devem estar acompanhadas nos elevadores e áreas de lazer<br>
+            • Não é permitido levar copos de vidro para a piscina<br>
+            • Respeite os horários de funcionamento das áreas comuns</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-bolt" style="color:var(--sand)"></i> Energia</h3>
+            <p>O consumo de energia elétrica é medido no início e fim da estadia. O valor é de <strong>R$ 1,00 por kWh</strong> consumido e será descontado da caução ou cobrado via PIX.</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-exclamation-circle" style="color:var(--coral)"></i> Danos</h3>
+            <p>Qualquer dano ao imóvel será cobrado do hóspede. Inspecione o apartamento na chegada e reporte imediatamente qualquer problema.</p>
+        </div>
+        <div class="emergency">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Emergências</h3>
+            <p>
+                <strong>Atendimento Golf Ville:</strong> 85 9 99490000<br>
+                <strong>Anfitrião:</strong> 85 9 99716870<br>
+                <strong>SAMU:</strong> 192 &nbsp;|&nbsp;
+                <strong>Bombeiros:</strong> 193 &nbsp;|&nbsp;
+                <strong>Polícia:</strong> 190
+            </p>
+        </div>
+    </section>
+
+    <!-- ─── RESTAURANTES ─── -->
+    <section id="restaurants" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-utensils"></i>
+            <h2>Restaurantes</h2>
+        </div>
+        <p style="font-size:0.85em; color:var(--text-soft); margin-bottom:16px; text-align:center;">Opções próximas a Porto das Dunas e região</p>
+        <div class="place-card">
+            <div class="place-icon">🦞</div>
+            <div class="place-info">
+                <h4>Fogo de Chão Beach</h4>
+                <p>Frutos do mar, lagostas e grelhados com vista para o mar. Ambiente sofisticado e familiar.</p>
+                <span class="place-dist">~2 km</span>
+            </div>
+        </div>
+        <div class="place-card">
+            <div class="place-icon">🐟</div>
+            <div class="place-info">
+                <h4>Peixada do Meio</h4>
+                <p>Especialidade em peixes frescos, moquecas e caldeiradas. Ambiente rústico e acolhedor.</p>
+                <span class="place-dist">~3 km</span>
+            </div>
+        </div>
+        <div class="place-card">
+            <div class="place-icon">🍕</div>
+            <div class="place-info">
+                <h4>Pizzaria Aquiraz</h4>
+                <p>Pizzas artesanais, pastas e saladas. Ótima opção para toda a família.</p>
+                <span class="place-dist">~5 km · Aquiraz</span>
+            </div>
+        </div>
+        <div class="place-card">
+            <div class="place-icon">🥗</div>
+            <div class="place-info">
+                <h4>Beach Club Golf Ville</h4>
+                <p>Dentro do condomínio. Restaurante e bar com serviço na piscina e vista para o mar.</p>
+                <span class="place-dist">No condomínio</span>
+            </div>
+        </div>
+        <div class="place-card">
+            <div class="place-icon">🍔</div>
+            <div class="place-info">
+                <h4>Restaurante Iate Golf Ville</h4>
+                <p>Culinária variada, lanches e pratos executivos. Dentro do resort Golf Ville.</p>
+                <span class="place-dist">No condomínio</span>
+            </div>
+        </div>
+        <div class="place-card">
+            <div class="place-icon">🍦</div>
+            <div class="place-info">
+                <h4>Sorvetes e Açaí Beach Park</h4>
+                <p>Quiosque com sorvetes, açaí e drinks gelados. Perfeito para o fim da tarde.</p>
+                <span class="place-dist">~1,5 km</span>
+            </div>
+        </div>
+        <div class="highlight-box">
+            <i class="fas fa-info-circle"></i>
+            <h3>Dica do Anfitrião</h3>
+            <p>Pergunte ao anfitrião sobre reservas e recomendações personalizadas para sua estadia!</p>
+        </div>
+    </section>
+
+    <!-- ─── CONTATOS ÚTEIS ─── -->
+    <section id="useful" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fas fa-store"></i>
+            <h2>Contatos Úteis</h2>
+        </div>
+        <p style="font-size:0.85em; color:var(--text-soft); margin-bottom:16px; text-align:center;">Serviços e estabelecimentos na região</p>
+        <div class="card" style="border-left-color:var(--coral)">
+            <h3><i class="fas fa-shopping-basket" style="color:var(--coral)"></i> Mercadinhos & Supermercados</h3>
+            <div class="place-card" style="margin-bottom:8px;">
+                <div class="place-icon" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🛒</div>
+                <div class="place-info">
+                    <h4>Supermercado Lopes</h4>
+                    <p>Supermercado completo, frutas, bebidas e frios.</p>
+                    <span class="place-dist">~5 km · Aquiraz</span>
+                </div>
+            </div>
+            <div class="place-card" style="margin-bottom:8px;">
+                <div class="place-icon" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🧺</div>
+                <div class="place-info">
+                    <h4>Mercadinho Dunas</h4>
+                    <p>Itens básicos, snacks e bebidas. Próximo ao condomínio.</p>
+                    <span class="place-dist">~1 km</span>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-icon" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🏪</div>
+                <div class="place-info">
+                    <h4>Atacadão Aquiraz</h4>
+                    <p>Compras em maior volume, preços acessíveis.</p>
+                    <span class="place-dist">~8 km</span>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="border-left-color:var(--sand)">
+            <h3><i class="fas fa-birthday-cake" style="color:var(--coral)"></i> Confeitarias & Padarias</h3>
+            <div class="place-card" style="margin-bottom:8px;">
+                <div class="place-icon" style="background:linear-gradient(135deg,#fff8e1,#ffe082)">🥐</div>
+                <div class="place-info">
+                    <h4>Padaria Pão & Arte</h4>
+                    <p>Pães artesanais, bolos e café da manhã.</p>
+                    <span class="place-dist">~4 km</span>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-icon" style="background:linear-gradient(135deg,#fff8e1,#ffe082)">🎂</div>
+                <div class="place-info">
+                    <h4>Confeitaria Doce Mar</h4>
+                    <p>Doces finos, tortas e encomendas.</p>
+                    <span class="place-dist">~6 km · Aquiraz</span>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="border-left-color:var(--sky)">
+            <h3><i class="fas fa-taxi" style="color:var(--sky)"></i> Transporte & Táxi</h3>
+            <div class="place-card" style="margin-bottom:8px;">
+                <div class="place-icon" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">🚕</div>
+                <div class="place-info">
+                    <h4>Táxi Porto das Dunas</h4>
+                    <p>📞 (85) 98765-0000</p>
+                    <p>Táxi local 24h, corridas e aeroporto.</p>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-icon" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">📱</div>
+                <div class="place-info">
+                    <h4>Uber / 99</h4>
+                    <p>Disponíveis na região. Solicite pelo aplicativo normalmente.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="border-left-color:var(--ocean)">
+            <h3><i class="fas fa-briefcase-medical" style="color:var(--ocean)"></i> Farmácias & Saúde</h3>
+            <div class="place-card" style="margin-bottom:8px;">
+                <div class="place-icon" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">💊</div>
+                <div class="place-info">
+                    <h4>Farmácia São João</h4>
+                    <p>Medicamentos, produtos de higiene e dermocosméticos.</p>
+                    <span class="place-dist">~5 km · Aquiraz</span>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-icon" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">🏥</div>
+                <div class="place-info">
+                    <h4>UPA Aquiraz</h4>
+                    <p>Unidade de Pronto Atendimento. Emergências e consultas.</p>
+                    <span class="place-dist">~8 km</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CONTATOS / WHATSAPP ─── -->
+    <section id="contacts" class="section">
+        <a href="#" class="back-btn" onclick="showMenu(); return false;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Menu
+        </a>
+        <div class="section-header">
+            <i class="fab fa-whatsapp" style="color:#25d366"></i>
+            <h2>Fale Conosco</h2>
+        </div>
+        <p style="font-size:0.88em; color:var(--text-soft); text-align:center; margin-bottom:20px;">
+            Clique para abrir diretamente no WhatsApp
+        </p>
+        <a href="https://wa.me/5585999490000" class="contact-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+                <strong>Atendimento Golf Ville</strong>
+                <span class="btn-sub">85 9 9949-0000 · Recepção do condomínio</span>
+            </div>
+        </a>
+        <a href="https://wa.me/55999716870" class="contact-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+                <strong>Anfitrião – Eder Tabosa</strong>
+                <span class="btn-sub">85 9 9971-6870 · Horário: 8h às 22h</span>
+            </div>
+        </a>
+        <div class="emergency" style="margin-top:20px;">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Emergências</h3>
+            <p>
+                <strong>SAMU:</strong> 192<br>
+                <strong>Bombeiros:</strong> 193<br>
+                <strong>Polícia:</strong> 190<br>
+                <strong>Defesa Civil:</strong> 199
+            </p>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+        <p><strong>Golf Ville 32 Paradise</strong></p>
+        <p>Porto das Dunas · Aquiraz · CE</p>
+        <p style="font-size:0.75em; margin-top:10px; opacity:0.55;">Guia Digital Interativo · 2026</p>
+    </footer>
+
+</div>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById('mainNav').style.display = 'none';
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    function showMenu() {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById('mainNav').style.display = 'grid';
+        window.scrollTo(0, 0);
+    }
+
+    // Checklist persistence
+    document.querySelectorAll('.checklist-item input').forEach(cb => {
+        cb.addEventListener('click', e => e.stopPropagation());
+        cb.addEventListener('change', function() {
+            localStorage.setItem(this.id, this.checked);
+        });
+        const saved = localStorage.getItem(cb.id);
+        if (saved === 'true') cb.checked = true;
+    });
+</script>
+</body>
+</html>
